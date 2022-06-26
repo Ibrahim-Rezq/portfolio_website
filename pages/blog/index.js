@@ -1,6 +1,5 @@
 import PostCard from "../../components/PostCard";
 import Head from "next/head";
-import { BASE_URL } from "../../Utils/consts.js";
 
 const index = ({ posts }) => {
   return (
@@ -23,7 +22,9 @@ const index = ({ posts }) => {
 export default index;
 
 export async function getStaticProps() {
-  const res = await fetch(`${BASE_URL}/posts/`);
+  const res = await fetch(
+    "https://my-json-server.typicode.com/Ibrahim-Rezq/portfolio_website/posts/"
+  );
   const data = await res.json();
   return {
     props: { posts: data },
