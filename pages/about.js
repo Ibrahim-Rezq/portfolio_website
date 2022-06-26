@@ -1,8 +1,12 @@
 import React from "react";
+import Head from "next/head";
 
 const about = () => {
   return (
     <div className="page-100">
+      <Head>
+        <title>About Me</title>
+      </Head>
       <section className="container m-auto">
         <h1 className="text-center pb-4">about</h1>
         <p className="md:w-4/5 m-auto">
