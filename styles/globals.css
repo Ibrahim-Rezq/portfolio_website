@@ -1,26 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 :root {
-  --clr-test-1: #22201f;
-  --clr-test-2: #4b2d2d;
-  --clr-test-3: #863841;
-  --clr-test-4: #eeeeed;
-  --clr-test-5: #03dac5;
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(174, 91%, 21%);
-  --clr-primary-2: hsl(174, 91%, 29%);
-  --clr-primary-3: hsl(174, 91%, 37%);
-  --clr-primary-4: hsl(174, 91%, 45%);
+  --clr-primary-1: hsl(226, 91%, 21%);
+  --clr-primary-2: hsl(226, 91%, 29%);
+  --clr-primary-3: hsl(226, 91%, 37%);
+  --clr-primary-4: hsl(226, 91%, 45%);
   /* primary/main color */
-  --clr-primary-5: hsl(174, 91%, 52%);
+  --clr-primary-5: hsl(226, 91%, 52%);
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(174, 91%, 60%);
-  --clr-primary-7: hsl(174, 91%, 67%);
-  --clr-primary-8: hsl(174, 91%, 74%);
-  --clr-primary-9: hsl(174, 91%, 81%);
-  --clr-primary-10: hsl(174, 91%, 88%);
+  --clr-primary-6: hsl(226, 91%, 60%);
+  --clr-primary-7: hsl(226, 91%, 67%);
+  --clr-primary-8: hsl(226, 91%, 74%);
+  --clr-primary-9: hsl(226, 91%, 81%);
+  --clr-primary-10: hsl(226, 91%, 88%);
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 10%);
   --clr-grey-2: hsl(211, 39%, 17%);
@@ -61,12 +58,14 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: "Courier New", Courier, monospace, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: var(--clr-grey-2);
-  color: var(--clr-grey-9);
+  font-family: "Montserrat", sans-serif;
+  background: rgb(248 250 252);
+  color: rgb(30 41 59);
   line-height: 1.5;
   font-size: 0.875rem;
+}
+p {
+  font-family: "Lato sans";
 }
 ul {
   list-style-type: none;
@@ -109,7 +108,7 @@ h5 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-8);
+  color: rgb(71 85 105);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -137,9 +136,7 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
 
-/* section */
 .section {
   padding: 5rem 0;
 }
@@ -211,7 +208,7 @@ p {
 .page {
   min-height: calc(100vh - (20vh + 10rem));
 }
-.container {
+/*.container {
   height: 100%;
   max-width: 100%;
   margin: auto;
@@ -254,4 +251,4 @@ p {
   .container {
     max-width: 1320px;
   }
-}
+} */

@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
 
 const Header = () => {
   const NavLinks = [
@@ -19,17 +18,17 @@ const Header = () => {
     },
   ];
   return (
-    <nav className={styles.main}>
-      <section className={`${styles.container} container`}>
+    <nav className="bg-slate-900 text-slate-100 h-20 flex">
+      <section className="container mx-auto p-4 flex justify-between m-auto">
         <Link href="/">
-          <div className={styles.logo}>
+          <div className="text-lg md:text-3xl font-bold">
             <span>GameDev</span>بالعربى
           </div>
         </Link>
-        <ul className={styles.navLinks}>
+        <ul className="flex justify-between md:text-lg items-center capitalize ">
           {NavLinks.map((link) => {
             return (
-              <li>
+              <li key={link.path} className="px-4">
                 <Link href={link.path}>
                   <a>{link.name}</a>
                 </Link>

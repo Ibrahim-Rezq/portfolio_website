@@ -1,20 +1,13 @@
-import Image from "next/image";
-import styles from "../../styles/PostPage.module.css";
 const First = ({ post }) => {
   return (
     <div className="page-100">
-      <div className="container">
+      <div className="container m-auto">
         {post && (
           <>
-            <div className={styles.header}>
-              <h1 className={styles.heading}>{post.title}</h1>
+            <div className="p-4 mb-2">
+              <h1 className="">{post.title}</h1>
             </div>
-            {post.image && (
-              <div className={styles.img}>
-                <Image src={post.image} width={800} height={536} />
-              </div>
-            )}
-            <p style={{ maxWidth: "65rem", margin: "auto" }}>{post.body}</p>
+            <p className="md:w-4/5 m-auto">{post.body}</p>
           </>
         )}
       </div>
