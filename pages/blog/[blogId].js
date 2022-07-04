@@ -1,5 +1,5 @@
 import Head from "next/head";
-const First = ({ post }) => {
+const BlogPost = ({ post }) => {
   return (
     <div className="page-100">
       <Head>
@@ -19,7 +19,7 @@ const First = ({ post }) => {
   );
 };
 
-export default First;
+export default BlogPost;
 
 export async function getStaticProps(context) {
   const {

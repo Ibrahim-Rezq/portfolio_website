@@ -1,4 +1,4 @@
-import PostCard from "../../components/PostCard";
+import CardsGridView from "../../components/CardsGridView";
 import Head from "next/head";
 
 const index = ({ posts }) => {
@@ -8,12 +8,8 @@ const index = ({ posts }) => {
         <title>Blog</title>
       </Head>
       <div className="container m-auto ">
-        <h1 className="text-center pb-4">My Blog</h1>
-        <ul>
-          {posts.map((post) => {
-            return <PostCard key={post.id} post={post} />;
-          })}
-        </ul>
+        <h1 className="text-center pb-4 mb-8">My Blog</h1>
+        <CardsGridView data={posts} />
       </div>
     </div>
   );
