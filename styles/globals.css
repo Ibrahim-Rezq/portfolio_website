@@ -10,3 +10,18 @@ body {
   font-family: "Fredoka One", cursive;
   color: rgb(30 41 59);
 }
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(241 245 249);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(30 41 59);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(51 65 85);
+}

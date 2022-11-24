@@ -9,7 +9,8 @@ const Hero = () => {
           <h1 className="font-extrabold text-6xl ">Ibrahim Rezq</h1>
           <h1 className="font-extrabold pb-4 text-4xl">
             <br />
-            React Developer <br /> Building Amazing Web Apps
+            <span className="">React Developer</span>
+            <br /> Building Amazing Web Apps
           </h1>
           <div className="max-w-2xl pt-10 m-auto text-xl ">
             <p>

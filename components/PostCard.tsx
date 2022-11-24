@@ -19,7 +19,7 @@ type PostCardProps = {
 
 const PostCard = ({ data }: PostCardProps) => {
   return (
-    <article className="relative w-80 bg-slate-100 shadow-xl p-6">
+    <article className="relative w-96 bg-slate-100 shadow-xl p-6">
       <section className="flex justify-center items-center w-full ">
         <div className="relative min-w-[80px] h-[80px] mr-4 border-slate-500 border-[1px] shadow-inner">
           <Image
@@ -41,9 +41,7 @@ const PostCard = ({ data }: PostCardProps) => {
           {data.catagory.map((cat: string, i: number) => {
             return (
               <Link key={cat + i} href="/">
-                <Badge variant={Badge.variant.BLUE} icon>
-                  {cat}
-                </Badge>
+                <Badge variant={Badge.variant.BLUE}>{cat}</Badge>
               </Link>
             )
           })}

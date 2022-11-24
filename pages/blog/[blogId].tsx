@@ -1,21 +1,17 @@
 import { GetStaticProps } from "next"
-import Head from "next/head"
+import { SEOHead } from "../../components/Global/SEOHead"
+import { Container } from "../../components/UI/Container"
+
 const BlogPost = ({ post }: any) => {
   return (
-    <div className="page-100">
-      <Head>
-        <title>{post.title.slice(0, 10)}</title>
-      </Head>
-      <div className="container m-auto">
-        {post && (
-          <>
-            <div className="p-4 mb-2">
-              <h1 className="">{post.title}</h1>
-            </div>
-            <p className="md:w-4/5 m-auto">{post.body}</p>
-          </>
-        )}
-      </div>
+    <div className="min-h-cont py-4">
+      <SEOHead title={"About"} />
+      <Container center classes="py-8">
+        <h2 className="text-3xl text-center font-bold p-4 mb-2">
+          {post.title}
+        </h2>
+        <p className="md:w-4/5 m-auto">{post.body}</p>
+      </Container>
     </div>
   )
 }

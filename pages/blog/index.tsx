@@ -4,12 +4,12 @@ import { Container } from "../../components/UI/Container"
 
 const index = ({ posts }: any) => {
   return (
-    <div className="min-h-page">
+    <div className="min-h-page py-4">
       <SEOHead title={"Blog"} />
       <Container center classes="py-8">
         <h2 className="text-3xl text-center font-bold">My Blog</h2>
         <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl opacity-70" />
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10 place-items-center items-start">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-10 place-items-center items-start">
           {posts.map((item: any) => {
             return (
               <li key={item.id}>

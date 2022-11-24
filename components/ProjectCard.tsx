@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import { FaSearch } from "react-icons/fa"
 import { Badge } from "./UI/Badge"
 
 type ProjectCardProps = {
@@ -9,16 +8,19 @@ type ProjectCardProps = {
     image: string
     title: string
     body: string
-    catagory: string[]
+    catagory: {
+      name: string
+      icon: string
+    }[]
   }
 }
 
 const ProjectCard = ({ data }: ProjectCardProps) => {
   return (
     <article className="  flex justify-center items-center min-h-80 my-10 md:my-20 flex-col md:flex-row shadow-xl md:shadow-none border md:border-0">
-      <section className="relative h-72 md:h-[20rem] w-96 md:w-[30rem] overflow-hidden ">
+      <section className="relative h-72 md:h-[20rem] w-full md:w-[30rem] overflow-hidden border md:border">
         <Image
-          className="rounded hover:scale-110 duration-300"
+          className="rounded hover:scale-110 duration-300 grayscale-[75%] hover:grayscale-0"
           src={data.image}
           alt={" "}
           fill
@@ -26,13 +28,19 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
         />
       </section>
       <section className="md:rounded p-6 w-full h-full max-w-xl grid gap-4 place-content-between md:ml-[-5rem] z-40 bg-slate-100 md:shadow-xl">
-        <h4 className="text-2xl">{data.title.slice(0, 15)}</h4>
-        <p>{data.body.slice(0, 150)}</p>
-        <div className="flex gap-2 ">
-          {data.catagory.map((cat: string, i: number) => {
+        <h4 className="text-2xl">{data.title}</h4>
+        <p>{data.body}</p>
+        <div className="flex gap-2 flex-wrap">
+          {data.catagory.map((cat, i: number) => {
             return (
-              <Link key={cat + i} href="/">
-                <Badge variant={Badge.variant.BLUE}>{cat}</Badge>
+              <Link key={cat.name + i} href="/">
+                <Badge
+                  variant={Badge.variant.BLUE}
+                  // @ts-ignore
+                  icon={Badge.icon[cat.icon as any]}
+                >
+                  {cat.name}
+                </Badge>
               </Link>
             )
           })}

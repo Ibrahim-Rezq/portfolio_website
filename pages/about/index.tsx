@@ -1,14 +1,16 @@
 import React from "react"
 import Head from "next/head"
 import { SEOHead } from "../../components/Global/SEOHead"
+import { Container } from "../../components/UI/Container"
 
 const About = () => {
   return (
-    <div className="page-100">
+    <div className="min-h-cont py-4">
       <SEOHead title={"About"} />
-      <section className="container m-auto">
-        <h1 className="text-center pb-4">about</h1>
-        <p className="md:w-4/5 m-auto">
+      <Container center classes="py-8">
+        <h2 className="text-3xl text-center font-bold">About Me</h2>
+        <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl opacity-70" />
+        <p className="py-10">
           Lorem ipsum Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           Porro, rerum est sint animi officiis, voluptas dolorum, voluptatibus
           labore sit nesciunt in tenetur natus. Reprehenderit necessitatibus
@@ -17,7 +19,7 @@ const About = () => {
           distinctio suscipit? dolor sit amet consectetur adipisicing elit. A,
           velit
         </p>
-      </section>
+      </Container>
     </div>
   )
 }

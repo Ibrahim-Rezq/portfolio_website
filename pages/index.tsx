@@ -11,9 +11,9 @@ const Index = ({ projects, posts }: any) => {
       <Hero />
       <Projects projects={projects} />
       <Container center classes="py-8">
-        <h2 className="text-3xl text-center font-bold">My Blog</h2>
-        <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl opacity-70" />
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10 place-items-center items-start">
+        <h2 className="text-3xl text-center font-bold">Recent Projects</h2>
+        <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl" />
+        <ul className="flex gap-4 flex-wrap justify-evenly items-center my-10 ">
           {posts.map((item: any) => {
             return (
               <li key={item.id}>
@@ -34,7 +34,6 @@ export async function getStaticProps() {
   const postData = await resPost.json()
   const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + "projects")
   const data = await res.json()
-  console.log(postData)
   return {
     props: {
       projects: data,
