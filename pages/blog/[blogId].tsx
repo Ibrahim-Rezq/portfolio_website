@@ -1,5 +1,6 @@
-import Head from "next/head";
-const BlogPost = ({ post }) => {
+import { GetStaticProps } from "next"
+import Head from "next/head"
+const BlogPost = ({ post }: any) => {
   return (
     <div className="page-100">
       <Head>
@@ -16,35 +17,31 @@ const BlogPost = ({ post }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogPost;
+export default BlogPost
 
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context: any) => {
   const {
     params: { blogId },
-  } = context;
-  const res = await fetch(
-    `https://my-json-server.typicode.com/Ibrahim-Rezq/portfolio_website/posts/${blogId}`
-  );
-  const data = await res.json();
+  } = context
+  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts/${blogId}`)
+  const data = await res.json()
   return {
     props: { post: data },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `https://my-json-server.typicode.com/Ibrahim-Rezq/portfolio_website/posts/`
-  );
-  const data = await res.json();
-  const paths = data.map((el) => {
-    return { params: { blogId: `${el.id}` } };
-  });
+  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts/`)
+  const data = await res.json()
+  const paths = data.map((el: any) => {
+    return { params: { blogId: `${el.id}` } }
+  })
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }

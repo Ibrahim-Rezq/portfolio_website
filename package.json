@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "con-dev": "concurrently --kill-others \"yarn dev\" \"yarn serve\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,18 +11,28 @@
     "serve": "json-server --watch db.json --port 8000"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
     "gsap": "^3.10.4",
     "json-server": "^0.17.0",
-    "next": "12.1.6",
+    "next": "13.0.4",
     "postcss": "^8.4.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0",
+    "react-icons": "^4.6.0",
+    "react-query": "^3.39.1",
     "tailwindcss": "^3.1.4"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
     "eslint": "^8.18.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "13.0.4",
+    "typescript": "^4.9.3"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
