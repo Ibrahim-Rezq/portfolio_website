@@ -10,7 +10,7 @@ const About = () => {
       <Container center classes="py-8">
         <h2 className="text-3xl text-center font-bold">About Me</h2>
         <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl opacity-70" />
-        <p className="py-10">
+        <p className="p-8 max-w-xl">
           Lorem ipsum Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           Porro, rerum est sint animi officiis, voluptas dolorum, voluptatibus
           labore sit nesciunt in tenetur natus. Reprehenderit necessitatibus

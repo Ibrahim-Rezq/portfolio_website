@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "./UI/Badge"
 import { AiOutlineMinus, AiOutlineComment, AiOutlineFire } from "react-icons/ai"
+import Icon from "./UI/Icon"
 
 type PostCardProps = {
   data: {
@@ -41,7 +42,10 @@ const PostCard = ({ data }: PostCardProps) => {
           {data.catagory.map((cat: string, i: number) => {
             return (
               <Link key={cat + i} href="/">
-                <Badge variant={Badge.variant.BLUE}>{cat}</Badge>
+                <Badge variant={Badge.variant.BLUE}>
+                  <Icon />
+                  {cat}
+                </Badge>
               </Link>
             )
           })}

@@ -53,9 +53,9 @@
       "title": "Personal Portfolio",
       "body": "A Personal Portfolio/Blog Build With Next.js For SEO optmization and Fast Data Deliviry",
       "catagory": [
-        { "name": "Next.js", "icon": "NEXT" },
-        { "name": "React.js", "icon": "REACT" },
-        { "name": "TailWind", "icon": "TAILWIND" }
+        { "name": "Next.js", "icon": "Next" },
+        { "name": "React.js", "icon": "React" },
+        { "name": "TailWind", "icon": "Tailwind" }
       ]
     },
     {
@@ -64,9 +64,9 @@
       "title": "GamerZone",
       "body": "An E-commerce Website Build With React.js For FrontEnd with Auth0 for Authintication and Netlify Functions for Backend with AirTable for Database simulation",
       "catagory": [
-        { "name": "React.js", "icon": "REACT" },
-        { "name": "Styled-Component", "icon": "STYLED" },
-        { "name": "Netlify", "icon": "NETLIFY" }
+        { "name": "React.js", "icon": "React" },
+        { "name": "Styled-Component", "icon": "Styled" },
+        { "name": "Netlify", "icon": "Netlify" }
       ]
     }
   ]

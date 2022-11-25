@@ -1,15 +1,4 @@
 import React, { ReactNode } from "react"
-import { BsHash } from "react-icons/bs"
-import {
-  SiReact,
-  SiNextdotjs,
-  SiStyledcomponents,
-  SiNetlify,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiGithub,
-} from "react-icons/si"
 
 enum Variant {
   GRAY,
@@ -23,23 +12,10 @@ enum Variant {
   PURPLE,
   PINK,
 }
-enum Icon {
-  NONE,
-  HASH,
-  REACT,
-  NEXT,
-  STYLED,
-  NETLIFY,
-  TAILWIND,
-  NODE,
-  EXPRESS,
-  GITHUB,
-}
 
 type Props = {
   variant: Variant
   children?: ReactNode
-  icon: Icon
 }
 
 const VARIANT_MAPS: Record<Variant, string> = {
@@ -54,21 +30,9 @@ const VARIANT_MAPS: Record<Variant, string> = {
   [Variant.PURPLE]: "bg-purple-100 text-purple-800",
   [Variant.PINK]: "bg-pink-100 text-pink-800",
 }
-const ICON_MAPS: Record<Icon, ReactNode> = {
-  [Icon.NONE]: <></>,
-  [Icon.HASH]: <BsHash className="text-teal-600 mr-1" />,
-  [Icon.REACT]: <SiReact className="text-teal-600 mr-1" />,
-  [Icon.NEXT]: <SiNextdotjs className="text-teal-600 mr-1" />,
-  [Icon.STYLED]: <SiStyledcomponents className="text-teal-600 mr-1" />,
-  [Icon.NETLIFY]: <SiNetlify className="text-teal-600 mr-1" />,
-  [Icon.TAILWIND]: <SiTailwindcss className="text-teal-600 mr-1" />,
-  [Icon.NODE]: <SiNodedotjs className="text-teal-600 mr-1" />,
-  [Icon.EXPRESS]: <SiExpress className="text-teal-600 mr-1" />,
-  [Icon.GITHUB]: <SiGithub className="text-teal-600 mr-1" />,
-}
 
 export function Badge(props: Props) {
-  const { children, variant, icon } = props
+  const { children, variant } = props
   return (
     <span
       className={
@@ -76,15 +40,13 @@ export function Badge(props: Props) {
         VARIANT_MAPS[variant]
       }
     >
-      {ICON_MAPS[icon]} {children}
+      {children}
     </span>
   )
 }
 
 Badge.defaultProps = {
   variant: Variant.GRAY,
-  icon: Icon.HASH,
 }
 
 Badge.variant = Variant
-Badge.icon = Icon

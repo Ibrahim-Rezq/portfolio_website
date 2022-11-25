@@ -1,8 +1,8 @@
 import { SEOHead } from "../components/Global/SEOHead"
 import Hero from "../components/Hero"
-import PostCard from "../components/PostCard"
+import BlogPosts from "../components/BlogPosts"
 import Projects from "../components/Projects"
-import { Container } from "../components/UI/Container"
+import Skills from "../components/Skills"
 
 const Index = ({ projects, posts }: any) => {
   return (
@@ -10,19 +10,8 @@ const Index = ({ projects, posts }: any) => {
       <SEOHead />
       <Hero />
       <Projects projects={projects} />
-      <Container center classes="py-8">
-        <h2 className="text-3xl text-center font-bold">Recent Projects</h2>
-        <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl" />
-        <ul className="flex gap-4 flex-wrap justify-evenly items-center my-10 ">
-          {posts.map((item: any) => {
-            return (
-              <li key={item.id}>
-                <PostCard data={item} />
-              </li>
-            )
-          })}
-        </ul>
-      </Container>
+      <Skills />
+      <BlogPosts posts={posts} />
     </div>
   )
 }
