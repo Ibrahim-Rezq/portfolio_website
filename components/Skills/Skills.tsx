@@ -1,7 +1,7 @@
 import React from "react"
+import Card from "../UI/Card"
 import { Container } from "../UI/Container"
 import SectionHeader from "../UI/SectionHeader"
-import SkillCard from "./SkillCard"
 
 const Skills = ({ skillss }: any) => {
   const skills = [
@@ -15,11 +15,11 @@ const Skills = ({ skillss }: any) => {
   return (
     <Container center padding={4} classes="mt-10">
       <SectionHeader title="Skills/Languages" />
-      <ul className="flex gap-4 flex-wrap justify-around items-center my-10 ">
+      <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 place-items-center my-10 ">
         {skills.map((item: any) => {
           return (
-            <li key={item.name}>
-              <SkillCard skill={item} />
+            <li key={item.title}>
+              <Card data={item} />
             </li>
           )
         })}

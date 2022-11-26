@@ -13,6 +13,10 @@ import {
   SiCss3,
   SiJavascript,
   SiTypescript,
+  SiLinkedin,
+  SiYoutube,
+  SiTwitter,
+  SiInstagram,
 } from "react-icons/si"
 
 export type IconProps = {
@@ -34,6 +38,10 @@ const iconNames = [
   "Node",
   "Express",
   "GitHub",
+  "Linkedin",
+  "Youtube",
+  "Twitter",
+  "Instagram",
 ] as const
 
 type IconNames = typeof iconNames[number]
@@ -77,4 +85,8 @@ const Icons = {
   Node: { Icon: <SiNodedotjs />, color: "text-green-600" },
   Express: { Icon: <SiExpress />, color: "text-slate-800" },
   GitHub: { Icon: <SiGithub />, color: "text-slate-500" },
+  Linkedin: { Icon: <SiLinkedin />, color: "hover:text-blue-500" },
+  Youtube: { Icon: <SiYoutube />, color: "hover:text-red-500" },
+  Twitter: { Icon: <SiTwitter />, color: "hover:text-blue-500" },
+  Instagram: { Icon: <SiInstagram />, color: "hover:text-pink-500" },
 }
