@@ -1,7 +1,7 @@
 import React from "react"
-import { Container } from "./UI/Container"
+import { Container } from "../UI/Container"
 import { FaBrain, FaCode } from "react-icons/fa"
-import SkillCard from "./SkillCard"
+import SectionHeader from "../UI/SectionHeader"
 
 const Skills = ({ skillss }: any) => {
   const skills = [
@@ -18,8 +18,7 @@ const Skills = ({ skillss }: any) => {
   ]
   return (
     <Container center padding={4} classes="mt-10">
-      <h2 className="text-3xl text-center font-bold">Skills</h2>
-      <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl" />
+      <SectionHeader title="Skills" />
       <ul className="flex gap-4 flex-wrap justify-evenly items-center my-10 ">
         {skills.map((item: any) => {
           return (

@@ -1,8 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Badge } from "./UI/Badge"
+import { Badge } from "../UI/Badge"
 import { AiOutlineMinus, AiOutlineComment, AiOutlineFire } from "react-icons/ai"
-import Icon from "./UI/Icon"
+import Icon from "../UI/Icon"
+import Button from "../UI/Button"
 
 type PostCardProps = {
   data: {
@@ -20,7 +21,7 @@ type PostCardProps = {
 
 const PostCard = ({ data }: PostCardProps) => {
   return (
-    <article className="relative w-96 bg-slate-100 shadow-xl p-6">
+    <article className="relative w-96 bg-slate-100 shadow-xl p-6 mb-6">
       <section className="flex justify-center items-center w-full ">
         <div className="relative min-w-[80px] h-[80px] mr-4 border-slate-500 border-[1px] shadow-inner">
           <Image
@@ -51,9 +52,9 @@ const PostCard = ({ data }: PostCardProps) => {
           })}
           <Link
             href={`/blog/${data.id}`}
-            className="absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%] border border-sky-900 duration-300 py-1 px-2 hover:py-2  hover:px-2.5 text-slate-200 bg-slate-700 hover:text-slate-700 hover:bg-transparent"
+            className="absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%]"
           >
-            Continue Reading
+            <Button>Continue Reading</Button>
           </Link>
         </div>
       </section>

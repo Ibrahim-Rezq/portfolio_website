@@ -1,8 +1,8 @@
 import { SEOHead } from "../components/Global/SEOHead"
-import Hero from "../components/Hero"
-import BlogPosts from "../components/BlogPosts"
-import Projects from "../components/Projects"
-import Skills from "../components/Skills"
+import Hero from "../components/Home/Hero"
+import BlogPosts from "../components/Home/BlogPosts"
+import Projects from "../components/Home/Projects"
+import Skills from "../components/Skills/Skills"
 
 const Index = ({ projects, posts }: any) => {
   return (

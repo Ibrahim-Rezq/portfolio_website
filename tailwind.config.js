@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors")
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -15,6 +17,20 @@ module.exports = {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      colors: {
+        slate: colors.slate,
+        sky: colors.sky,
+        blue: colors.blue,
+        indego: colors.indego,
+        green: colors.green,
+        teal: colors.teal,
       },
     },
   },

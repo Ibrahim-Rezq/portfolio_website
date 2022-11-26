@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Badge } from "./UI/Badge"
-import Icon from "./UI/Icon"
+import { Badge } from "../UI/Badge"
+import Icon from "../UI/Icon"
 
 type ProjectCardProps = {
   data: {

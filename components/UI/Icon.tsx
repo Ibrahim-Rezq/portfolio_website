@@ -48,7 +48,7 @@ function isIconName(maybeIconName: unknown): maybeIconName is IconNames {
 const Icon = (props: IconProps) => {
   const { classes, iconName } = props
   if (isIconName(iconName)) {
-    const textColor = `text-${Icons[iconName].color}-500`
+    const textColor = Icons[iconName].color
     return React.cloneElement(Icons[iconName].Icon, {
       className: `${textColor} mr-1 ` + classes,
     })
@@ -64,17 +64,17 @@ Icon.defaultProps = {
 }
 
 const Icons = {
-  Hash: { Icon: <BsHash />, color: "teal" },
-  Html: { Icon: <SiHtml5 />, color: "orange" },
-  Css: { Icon: <SiCss3 />, color: "sky" },
-  JavaScript: { Icon: <SiJavascript />, color: "yellow" },
-  TypeScript: { Icon: <SiTypescript />, color: "blue" },
-  React: { Icon: <SiReact />, color: "blue" },
-  Next: { Icon: <SiNextdotjs />, color: "slate" },
-  Styled: { Icon: <SiStyledcomponents />, color: "pink" },
-  Netlify: { Icon: <SiNetlify />, color: "green" },
-  Tailwind: { Icon: <SiTailwindcss />, color: "teal" },
-  Node: { Icon: <SiNodedotjs />, color: "green" },
-  Express: { Icon: <SiExpress />, color: "slate" },
-  GitHub: { Icon: <SiGithub />, color: "slate" },
+  Hash: { Icon: <BsHash />, color: "text-teal-500" },
+  Html: { Icon: <SiHtml5 />, color: "text-orange-500" },
+  Css: { Icon: <SiCss3 />, color: "text-sky-500" },
+  JavaScript: { Icon: <SiJavascript />, color: "text-yellow-500" },
+  TypeScript: { Icon: <SiTypescript />, color: "text-blue-500" },
+  React: { Icon: <SiReact />, color: "text-blue-700" },
+  Next: { Icon: <SiNextdotjs />, color: "text-slate-800" },
+  Styled: { Icon: <SiStyledcomponents />, color: "text-pink-500" },
+  Netlify: { Icon: <SiNetlify />, color: "text-green-500" },
+  Tailwind: { Icon: <SiTailwindcss />, color: "text-teal-500" },
+  Node: { Icon: <SiNodedotjs />, color: "text-green-600" },
+  Express: { Icon: <SiExpress />, color: "text-slate-800" },
+  GitHub: { Icon: <SiGithub />, color: "text-slate-500" },
 }

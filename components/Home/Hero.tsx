@@ -1,7 +1,8 @@
-import { Container } from "./UI/Container"
-import { FaReact } from "react-icons/fa"
-import { SiExpress, SiNodedotjs, SiReact, SiNextdotjs } from "react-icons/si"
-import Icon from "./UI/Icon"
+import { Container } from "../UI/Container"
+import Icon from "../UI/Icon"
+import Button from "../UI/Button"
+import Link from "next/link"
+import { BsArrowRight } from "react-icons/bs"
 const Hero = () => {
   return (
     <section className="flex flex-col justify-center items-center min-h-page bg-slate-100">
@@ -13,7 +14,7 @@ const Hero = () => {
             <span className="">React Developer</span>
             <br /> Building Amazing Web Apps
           </h1>
-          <div className="max-w-2xl pt-10 m-auto text-xl ">
+          <div className="max-w-2xl pt-10 m-auto text-xl mb-8">
             <p>
               Making Amazing web apps using React{" "}
               <Icon iconName={"React"} classes="inline text-2xl" />
@@ -29,6 +30,9 @@ const Hero = () => {
               for a FullStack solution
             </p>
           </div>
+          <Link href="/">
+            <Button iconRight={<BsArrowRight />}>Contact Me</Button>
+          </Link>
         </div>
       </Container>
     </section>

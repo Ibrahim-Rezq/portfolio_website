@@ -1,5 +1,6 @@
 import React from "react"
-import { Container } from "./UI/Container"
+import { Container } from "../UI/Container"
+import SectionHeader from "../UI/SectionHeader"
 import SkillCard from "./SkillCard"
 
 const Skills = ({ skillss }: any) => {
@@ -13,8 +14,7 @@ const Skills = ({ skillss }: any) => {
   ]
   return (
     <Container center padding={4} classes="mt-10">
-      <h2 className="text-3xl text-center font-bold">Skills/Languages</h2>
-      <hr className="border-dotted border-b-4 border-teal-200 w-60 m-auto rounded-3xl" />
+      <SectionHeader title="Skills/Languages" />
       <ul className="flex gap-4 flex-wrap justify-around items-center my-10 ">
         {skills.map((item: any) => {
           return (

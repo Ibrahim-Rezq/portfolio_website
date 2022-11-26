@@ -1,5 +1,5 @@
-import React, { ReactNode, ReactElement } from "react"
-import Icon from "./UI/Icon"
+import React from "react"
+import Icon from "../UI/Icon"
 type SkillCardProps = {
   skill: {
     title: string
