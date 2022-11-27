@@ -2,7 +2,7 @@ import { SEOHead } from "../components/Global/SEOHead"
 import Hero from "../components/Home/Hero"
 import BlogPosts from "../components/Home/BlogPosts"
 import Projects from "../components/Home/Projects"
-import Skills from "../components/Skills/Skills"
+import Skills from "../components/Home/Skills"
 import ContactFrom from "../components/Contact/ContactFrom"
 
 const Index = ({ projects, posts }: any) => {

@@ -2,7 +2,8 @@ import { Container } from "../UI/Container"
 import Icon from "../UI/Icon"
 import Button from "../UI/Button"
 import Link from "next/link"
-import { BsArrowRight } from "react-icons/bs"
+import { BsArrowRight, BsInfoCircle } from "react-icons/bs"
+
 const Hero = () => {
   return (
     <section className="flex flex-col justify-center items-center min-h-page bg-slate-100">
@@ -30,8 +31,11 @@ const Hero = () => {
               for a FullStack solution
             </p>
           </div>
-          <Link href="/">
+          <Link href="#Contact" className="mx-1">
             <Button iconRight={<BsArrowRight />}>Contact Me</Button>
+          </Link>
+          <Link href="/about" className="mx-1">
+            <Button iconRight={<BsInfoCircle />}>About Me</Button>
           </Link>
         </div>
       </Container>

@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka", cursive;
   color: rgb(30 41 59);
 }
 body::-webkit-scrollbar {
@@ -44,4 +44,60 @@ body::-webkit-scrollbar-thumb:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+.markdown h1 {
+  font-size: 2.5rem;
+}
+.markdown h2 {
+  font-size: 2rem;
+}
+.markdown h3 {
+  font-size: 1.5rem;
+}
+.markdown h4 {
+  font-size: 1.25rem;
+}
+.markdown h5 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-3);
+}
+@media screen and (min-width: 800px) {
+  .markdown h1 {
+    font-size: 3rem;
+  }
+  .markdown h2 {
+    font-size: 2.5rem;
+  }
+  .markdown h3 {
+    font-size: 2rem;
+  }
+  .markdown h4 {
+    font-size: 1.5rem;
+  }
+  .markdown h5 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4 {
+    line-height: 1;
+  }
 }

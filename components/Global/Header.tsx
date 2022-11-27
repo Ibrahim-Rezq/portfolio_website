@@ -30,7 +30,7 @@ const Header = () => {
             return (
               <li
                 key={link.path}
-                className={`mx-4 hover:border-b-2 hover:text-slate-100 duration-75 ${
+                className={`mx-4 hover:border-b-2 hover:text-slate-100 duration-75 font-light ${
                   link.path === router.pathname
                     ? "border-b-2"
                     : "text-slate-300"

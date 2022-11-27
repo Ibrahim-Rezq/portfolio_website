@@ -64,7 +64,7 @@ const PostCard = ({ data }: PostCardProps) => {
 
 export default PostCard
 
-const PostMeta = ({ data }: any) => {
+export const PostMeta = ({ data }: any) => {
   const date = new Date(data.date)
   const month = date.toString().slice(4, 7)
   const day = date.getDate()

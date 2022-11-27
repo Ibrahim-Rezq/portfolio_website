@@ -2,6 +2,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "../UI/Badge"
 import Icon from "../UI/Icon"
+import Button from "../UI/Button"
+import { BsGithub } from "react-icons/bs"
+import { HiArrowTopRightOnSquare } from "react-icons/hi2"
 
 type ProjectCardProps = {
   data: {
@@ -13,6 +16,8 @@ type ProjectCardProps = {
       name: string
       icon: any
     }[]
+    liveLink: string
+    githubLink: string
   }
 }
 
@@ -29,7 +34,27 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
         />
       </section>
       <section className="md:rounded p-6 w-full h-full max-w-xl grid gap-4 place-content-between md:ml-[-5rem] z-40 bg-slate-100 md:shadow-xl">
-        <h4 className="text-2xl">{data.title}</h4>
+        <section className="flex justify-between">
+          <h4 className="text-2xl grow ">{data.title}</h4>
+          <span className="ml-auto">
+            <Link href={data.githubLink} target="_blank">
+              <Button
+                iconLeft={<BsGithub />}
+                classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+              >
+                GitHub
+              </Button>
+            </Link>
+            <Link href={data.liveLink} target="_blank">
+              <Button
+                iconRight={<HiArrowTopRightOnSquare />}
+                classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+              >
+                Live
+              </Button>
+            </Link>
+          </span>
+        </section>
         <p>{data.body}</p>
         <div className="flex gap-2 flex-wrap">
           {data.catagory.map((cat, i: number) => {
@@ -56,4 +81,6 @@ ProjectCard.defaultProps = {
   id: " ",
   image: " ",
   title: " ",
+  liveLink: " ",
+  githubLink: " ",
 }

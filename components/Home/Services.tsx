@@ -22,7 +22,10 @@ const Skills = ({ skillss }: any) => {
       <ul className="flex gap-4 flex-wrap justify-evenly items-center my-10 ">
         {skills.map((item: any) => {
           return (
-            <article className="  flex justify-center items-center min-h-80 my-10 md:my-20 flex-col md:flex-row shadow-xl md:shadow-none">
+            <article
+              key={item.title}
+              className="  flex justify-center items-center min-h-80 my-10 md:my-20 flex-col md:flex-row shadow-xl md:shadow-none"
+            >
               <span className="z-10">
                 {React.cloneElement(item.Icon, {
                   className: "text-teal-600 mb-[-1rem] text-5xl",

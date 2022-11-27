@@ -5,11 +5,11 @@ import Footer from "../components/Global/Footer"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <div className="scroll-smooth">
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   )
 }
 

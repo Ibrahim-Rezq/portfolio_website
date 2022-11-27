@@ -8,14 +8,10 @@ type Props = {
 }
 
 export function Container(props: Props) {
-  const { children, center, padding, classes } = props
-  let p = 2
-  if (padding > 0 && padding <= 10) {
-    p = padding
-  }
+  const { children, center, classes } = props
   return (
     <section
-      className={`container ${center ? "mx-auto " : ""}p-${p} py-0 ${classes}`}
+      className={`container ${center ? "mx-auto " : ""} p-4 py-0 ${classes}`}
     >
       {children}
     </section>
