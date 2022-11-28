@@ -4,20 +4,11 @@ import Link from "next/link"
 import { PostMeta } from "../../components/Blog/PostCard"
 import { SEOHead } from "../../components/Global/SEOHead"
 import { Badge } from "../../components/UI/Badge"
-import Button from "../../components/UI/Button"
 import { Container } from "../../components/UI/Container"
 import Icon from "../../components/UI/Icon"
 import ReactMarkdown from "react-markdown"
-
+import data from "../../db"
 const BlogPost = ({ post }: any) => {
-  /*
-      "id": 3,
-      "image": "https://picsum.photos/640/360",
-      "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, sunt? Laborum ipsam alias vero in eos perspiciatis illum. Perferendis dignissimos omnis sapiente dolorem hic sint vel excepturi dicta necessitatibus! Neque eligendi dolores asperiores nemo non quidem fuga molestiae, consequatur tempore repudiandae eveniet quia hic in ipsa ut incidunt quo suscipit accusamus odio adipisci! Incidunt, repudiandae officia. Alias molestias veritatis vitae voluptatem beatae architecto, et ipsum odio dicta neque numquam eum labore veniam dolores magni velit praesentium nam nesciunt aut quibusdam quisquam iusto, rem sequi aperiam. Provident nostrum natus, cum nesciunt, doloribus ratione quod saepe ea cumque unde fugit voluptatum exercitationem!",
-      "catagory": ["politcs"],
-      "meta": { "date": "5-5-2022", "views": 3 }
-  */
   return (
     <div className="min-h-cont py-4">
       <SEOHead title={"About"} />
@@ -65,20 +56,16 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   const {
     params: { blogId },
   } = context
-  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts/${blogId}`)
-  const data = await res.json()
+  const post = { ...data.Posts.find((el) => el.id === +blogId) }
   return {
-    props: { post: data },
+    props: { post },
   }
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts/`)
-  const data = await res.json()
-  const paths = data.map((el: any) => {
+  const paths = data.Posts.map((el: any) => {
     return { params: { blogId: `${el.id}` } }
   })
-
   return {
     paths,
     fallback: false,

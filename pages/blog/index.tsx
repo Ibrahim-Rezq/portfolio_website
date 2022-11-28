@@ -2,7 +2,7 @@ import { SEOHead } from "../../components/Global/SEOHead"
 import PostCard from "../../components/Blog/PostCard"
 import { Container } from "../../components/UI/Container"
 import SectionHeader from "../../components/UI/SectionHeader"
-
+import data from "../../db"
 const index = ({ posts }: any) => {
   return (
     <div className="min-h-page py-4">
@@ -26,9 +26,7 @@ const index = ({ posts }: any) => {
 export default index
 
 export async function getStaticProps() {
-  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts/`)
-  const data = await res.json()
   return {
-    props: { posts: data.splice(0, 5) },
+    props: { posts: data.Posts },
   }
 }

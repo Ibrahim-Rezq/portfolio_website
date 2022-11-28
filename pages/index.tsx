@@ -4,6 +4,7 @@ import BlogPosts from "../components/Home/BlogPosts"
 import Projects from "../components/Home/Projects"
 import Skills from "../components/Home/Skills"
 import ContactFrom from "../components/Contact/ContactFrom"
+import data from "../db.js"
 
 const Index = ({ projects, posts }: any) => {
   return (
@@ -21,14 +22,10 @@ const Index = ({ projects, posts }: any) => {
 export default Index
 
 export async function getStaticProps() {
-  const resPost = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + `posts`)
-  const postData = await resPost.json()
-  const res = await fetch(process.env.NEXT_PUBLIC_SERVE_URL + "projects")
-  const data = await res.json()
   return {
     props: {
-      projects: data,
-      posts: postData.splice(0, 3),
+      projects: data.Projects,
+      posts: data.Posts.splice(0, 3),
     },
   }
 }
