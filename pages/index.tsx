@@ -5,6 +5,7 @@ import Projects from "../components/Home/Projects"
 import Skills from "../components/Home/Skills"
 import ContactFrom from "../components/Contact/ContactFrom"
 import data from "../db.js"
+import { getAllBlogPosts } from "../utils/api/blogPost"
 
 const Index = ({ projects, posts }: any) => {
   return (
@@ -22,10 +23,12 @@ const Index = ({ projects, posts }: any) => {
 export default Index
 
 export async function getStaticProps() {
+  const posts = await getAllBlogPosts()
+
   return {
     props: {
       projects: data.Projects,
-      posts: data.Posts.splice(0, 3),
+      posts: posts.splice(0, 3),
     },
   }
 }

@@ -11,7 +11,7 @@ const BlogPosts = ({ posts }: any) => {
         {posts.map((item: any) => {
           return (
             <li key={item.id}>
-              <PostCard data={item} />
+              <PostCard post={item} />
             </li>
           )
         })}

@@ -13,6 +13,7 @@ module.exports = {
     },
     minWidth: {
       post: "336px",
+      links: "145px",
     },
     extend: {
       animation: {

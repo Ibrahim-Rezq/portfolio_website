@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: result.parsed,
   images: {
-    domains: ["picsum.photos", "loremipsum.io"],
+    domains: ["images.ctfassets.net", "loremipsum.io"],
   },
 }
 

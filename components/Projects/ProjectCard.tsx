@@ -4,7 +4,7 @@ import { Badge } from "../UI/Badge"
 import Icon from "../UI/Icon"
 import Button from "../UI/Button"
 import { BsGithub } from "react-icons/bs"
-import { HiArrowTopRightOnSquare } from "react-icons/hi2"
+import { HiOutlineArrowRight } from "react-icons/hi2"
 
 type ProjectCardProps = {
   data: {
@@ -36,24 +36,15 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
       <section className="md:rounded p-6 w-full h-full max-w-xl grid gap-4 place-content-between md:ml-[-5rem] z-40 bg-slate-100 md:shadow-xl">
         <section className="flex justify-between">
           <h4 className="text-2xl grow ">{data.title}</h4>
-          <span className="ml-auto">
-            <Link href={data.githubLink} target="_blank">
-              <Button
-                iconLeft={<BsGithub />}
-                classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
-              >
-                GitHub
-              </Button>
-            </Link>
-            <Link href={data.liveLink} target="_blank">
-              <Button
-                iconRight={<HiArrowTopRightOnSquare />}
-                classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
-              >
-                Live
-              </Button>
-            </Link>
+          <span className="hidden sm:block">
+            <ProjectLinks
+              githubLink={data.githubLink}
+              liveLink={data.liveLink}
+            />
           </span>
+        </section>
+        <section className="flex justify-between sm:hidden">
+          <ProjectLinks githubLink={data.githubLink} liveLink={data.liveLink} />
         </section>
         <p>{data.body}</p>
         <div className="flex gap-2 flex-wrap">
@@ -74,6 +65,29 @@ const ProjectCard = ({ data }: ProjectCardProps) => {
 }
 
 export default ProjectCard
+
+const ProjectLinks = ({ githubLink, liveLink }: any) => {
+  return (
+    <span className="ml-auto ">
+      <Link href={githubLink} target="_blank">
+        <Button
+          iconLeft={<BsGithub />}
+          classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+        >
+          GitHub
+        </Button>
+      </Link>
+      <Link href={liveLink} target="_blank">
+        <Button
+          iconRight={<HiOutlineArrowRight />}
+          classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+        >
+          Live
+        </Button>
+      </Link>
+    </span>
+  )
+}
 
 ProjectCard.defaultProps = {
   body: " ",
