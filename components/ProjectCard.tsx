@@ -1,10 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Badge } from "../UI/Badge"
-import Icon from "../UI/Icon"
-import Button from "../UI/Button"
-import { BsGithub } from "react-icons/bs"
-import { HiOutlineArrowRight } from "react-icons/hi2"
+import { Badge } from "./UI/Badge"
+import Icon from "./UI/Icon"
+import Button from "./UI/Button"
+import { BsGithub, BsArrowRightShort } from "react-icons/bs"
 
 type ProjectCardProps = {
   data: {
@@ -79,7 +78,7 @@ const ProjectLinks = ({ githubLink, liveLink }: any) => {
       </Link>
       <Link href={liveLink} target="_blank">
         <Button
-          iconRight={<HiOutlineArrowRight />}
+          iconRight={<BsArrowRightShort />}
           classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
         >
           Live

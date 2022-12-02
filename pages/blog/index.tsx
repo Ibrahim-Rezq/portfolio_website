@@ -1,5 +1,5 @@
 import { SEOHead } from "../../components/Global/SEOHead"
-import PostCard from "../../components/Blog/PostCard"
+import PostCard from "../../components/PostCard"
 import { Container } from "../../components/UI/Container"
 import SectionHeader from "../../components/UI/SectionHeader"
 import { getAllBlogPosts } from "../../utils/api/blogPost"

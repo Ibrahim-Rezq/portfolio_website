@@ -1,21 +1,21 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Badge } from "../UI/Badge"
-import { AiOutlineMinus, AiOutlineComment, AiOutlineFire } from "react-icons/ai"
-import Icon from "../UI/Icon"
-import Button from "../UI/Button"
+import { Badge } from "./UI/Badge"
+import Icon from "./UI/Icon"
+import Button from "./UI/Button"
 
 type PostCardProps = {
   post: BlogPost
 }
 
 const PostCard = ({ post }: PostCardProps) => {
+  const { image, summary, title, category, slug } = post
   return (
     <article className="relative w-96 bg-slate-100 shadow-xl p-6 mb-6">
       <section className="flex justify-center items-center w-full ">
         <div className="relative min-w-[80px] h-[80px] mr-4 border-slate-500 border-[1px] shadow-inner">
           <Image
-            src={post.image.url}
+            src={image.url}
             alt={" "}
             fill
             style={{ objectFit: "cover" }}
@@ -23,14 +23,14 @@ const PostCard = ({ post }: PostCardProps) => {
           />
         </div>
         <h4 className="grow text-lg font-semibold capitalize truncate">
-          {post.title}
+          {title}
         </h4>
       </section>
       <PostMeta post={post} />
-      <section className="p-6 w-full h-full grid gap-4 place-content-between	">
-        <p>{post.summary}...</p>
-        <div className="flex gap-2">
-          {post.category.map((cat: string, i: number) => {
+      <section className="px-4 w-full h-full grid gap-4 place-content-between relative">
+        <p className="w-full">{summary}...</p>
+        <div className="flex gap-2 flex-wrap">
+          {category.map((cat: string, i: number) => {
             return (
               <Link key={cat + i} href="/">
                 <Badge variant={Badge.variant.BLUE}>
@@ -40,13 +40,10 @@ const PostCard = ({ post }: PostCardProps) => {
               </Link>
             )
           })}
-          <Link
-            href={`/blog/${post.slug}`}
-            className="absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%]"
-          >
-            <Button>Continue Reading</Button>
-          </Link>
         </div>
+        <Link href={`/blog/${slug}`} className="mb-[-2.5rem] m-auto">
+          <Button>Continue Reading</Button>
+        </Link>
       </section>
     </article>
   )
@@ -73,7 +70,7 @@ export const PostMeta = ({ post }: any) => {
 
         {/* <p className="mx-2 flex justify-center items-center">
           <AiOutlineFire className="text-teal-600" />
-          {post.views}
+          {views}
         </p> */}
       </section>
     </>

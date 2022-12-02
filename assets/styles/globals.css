@@ -46,63 +46,7 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 1000;
 }
 
-.markdown h1,
-.markdown h2,
-.markdown h3,
-.markdown h4,
-.markdown h5 {
-  letter-spacing: var(--spacing);
-  text-transform: capitalize;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-}
-.markdown h1 {
-  font-size: 2.5rem;
-}
-.markdown h2 {
-  font-size: 2rem;
-}
-.markdown h3 {
-  font-size: 1.5rem;
-}
-.markdown h4 {
-  font-size: 1.25rem;
-}
-.markdown h5 {
-  font-size: 0.875rem;
-}
-p {
-  margin-bottom: 1.25rem;
-  color: var(--clr-grey-3);
-}
-@media screen and (min-width: 800px) {
-  .markdown h1 {
-    font-size: 3rem;
-  }
-  .markdown h2 {
-    font-size: 2.5rem;
-  }
-  .markdown h3 {
-    font-size: 2rem;
-  }
-  .markdown h4 {
-    font-size: 1.5rem;
-  }
-  .markdown h5 {
-    font-size: 1rem;
-  }
-  body {
-    font-size: 1rem;
-  }
-  .markdown h1,
-  .markdown h2,
-  .markdown h3,
-  .markdown h4 {
-    line-height: 1;
-  }
-}
-
-/* .markdown {
+.markdown {
   @apply text-lg leading-relaxed;
 }
 
@@ -119,4 +63,8 @@ p {
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
-} */
+}
+
+.markdown h4 {
+  @apply text-xl mt-8 mb-4 leading-snug;
+}

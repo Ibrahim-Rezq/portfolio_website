@@ -1,7 +1,7 @@
 import React from "react"
-import { Container } from "../UI/Container"
+import { Container } from "./UI/Container"
 import { FaBrain, FaCode } from "react-icons/fa"
-import SectionHeader from "../UI/SectionHeader"
+import SectionHeader from "./UI/SectionHeader"
 
 const Skills = ({ skillss }: any) => {
   const skills = [

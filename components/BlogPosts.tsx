@@ -1,7 +1,7 @@
 import React from "react"
-import PostCard from "../Blog/PostCard"
-import { Container } from "../UI/Container"
-import SectionHeader from "../UI/SectionHeader"
+import PostCard from "./PostCard"
+import { Container } from "./UI/Container"
+import SectionHeader from "./UI/SectionHeader"
 
 const BlogPosts = ({ posts }: any) => {
   return (

@@ -1,18 +1,21 @@
-import { Container } from "../UI/Container"
-import Icon from "../UI/Icon"
-import Button from "../UI/Button"
+import Image from "next/image"
+import { Container } from "./UI/Container"
+import Icon from "./UI/Icon"
+import Button from "./UI/Button"
 import Link from "next/link"
 import { BsArrowRight, BsInfoCircle } from "react-icons/bs"
+import HeroImage from "../assets/Hero.svg"
 
 const Hero = () => {
   return (
     <section className="flex flex-col justify-center items-center min-h-page bg-slate-100">
       <Container center padding={4} classes="flex justify-center items-center">
         <div className="text-center lg:text-start">
-          <h1 className="font-extrabold text-6xl ">Ibrahim Rezq</h1>
           <h1 className="font-extrabold pb-4 text-4xl">
+            <span className="font-extrabold text-6xl">Ibrahim Rezq</span>
             <br />
-            <span className="">React Developer</span>
+            <br />
+            <span>React Developer</span>
             <br /> Building Amazing Web Apps
           </h1>
           <div className="max-w-2xl pt-10 m-auto text-xl mb-8">
@@ -37,6 +40,9 @@ const Hero = () => {
           <Link href="/about" className="mx-1">
             <Button iconRight={<BsInfoCircle />}>About Me</Button>
           </Link>
+        </div>
+        <div className="w-[50%] hidden lg:block">
+          <Image src={HeroImage} alt="developer working on laptop" />
         </div>
       </Container>
     </section>
