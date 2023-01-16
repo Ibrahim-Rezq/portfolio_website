@@ -12,7 +12,7 @@ const index = ({ posts }: any) => {
             <Container center classes='py-8'>
                 <SectionHeader title='My Blog' />
                 <ul className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-10 place-items-center items-start'>
-                    {blogData.map((item: any) => {
+                    {posts.map((item: any) => {
                         return (
                             <li key={(Date.now() * Math.random()).toString()}>
                                 <PostCard post={item} />
@@ -30,6 +30,6 @@ export default index
 export async function getStaticProps() {
     const data = await getAllBlogPosts()
     return {
-        props: { posts: data ?? [] },
+        props: { posts: data ?? blogData },
     }
 }
