@@ -27,8 +27,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      projects: data.Projects,
-      posts: posts.splice(0, 3),
+      projects: data?.Projects??[],
+      posts: posts?.splice(0, 3)??[],
     },
   }
 }
