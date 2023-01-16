@@ -23,7 +23,14 @@ const ContactFrom = (props: ContactFromProps) => {
             <p className="text-xl max-w-lg text-center md:text-start m-auto">
               If you wanna get in touch, talk to me about a project
               collaboration or just say hi, fill up the awesome form or send an
-              email to ovic391@gmail.com and ~let`&apos;`s talk.
+              email to{" "}
+              <a
+                className="text-blue-600 hover:underline dark:text-blue-500"
+                href="mailto: ovic391@gmail.com"
+              >
+                ovic391@gmail.com
+              </a>{" "}
+              and ~let&apos;s talk.
             </p>
             <Image src={ContactImage} alt={"Contact Me "} />
           </div>

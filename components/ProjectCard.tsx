@@ -71,7 +71,7 @@ const ProjectLinks = ({ githubLink, liveLink }: any) => {
       <Link href={githubLink} target="_blank">
         <Button
           iconLeft={<BsGithub />}
-          classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+          classes="rounded-xl py-2 px-2.5 text-sm mx-0.5 before:rounded-2xl"
         >
           GitHub
         </Button>
@@ -79,7 +79,7 @@ const ProjectLinks = ({ githubLink, liveLink }: any) => {
       <Link href={liveLink} target="_blank">
         <Button
           iconRight={<BsArrowRightShort />}
-          classes="rounded-2xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
+          classes="rounded-xl py-1 px-1.5 text-sm mx-0.5 before:rounded-2xl"
         >
           Live
         </Button>
